@@ -26,7 +26,12 @@
                 }
             };
             // Set the view
-            viewer.scene.camera.setView(homeCameraView);
+            // viewer.scene.camera.setView(homeCameraView);
+            homeCameraView.duration = 2.0;
+            homeCameraView.maximumHeight = 2000;
+            homeCameraView.pitchAdjustHeight = 2000;
+            homeCameraView.endTransform = Cesium.Matrix4.IDENTITY;
+            viewer.scene.camera.flyTo(homeCameraView);
         }
 
     </script>
