@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Widgets/widgets.css"
+        rel="stylesheet">
+    <script src="./settings.js"></script>
+</head>
+
+<body>
+    <div id="cesiumContainer" style="width: 100%; height:100%"></div>
+    <script>
+        Cesium.Ion.defaultAccessToken = token;
+        var viewer = new Cesium.Viewer('cesiumContainer');
+    </script>
+</body>
+
+</html>
