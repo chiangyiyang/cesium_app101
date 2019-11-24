@@ -9,12 +9,24 @@
     <script src="./settings.js"></script>
     <script>
         function addLabel(text, lng, lat) {
-            viewer.entities.add({
+            let label = viewer.entities.add({
                 position: Cesium.Cartesian3.fromDegrees(lng, lat),
                 label: {
                     text: text
                 }
             });
+            var initialPosition = new Cesium.Cartesian3.fromDegrees(lng, lat, 10000000);
+            var initialOrientation = new Cesium.HeadingPitchRoll.fromDegrees(0, -90, 0);
+            var homeCameraView = {
+                destination: initialPosition,
+                orientation: {
+                    heading: initialOrientation.heading,
+                    pitch: initialOrientation.pitch,
+                    roll: initialOrientation.roll
+                }
+            };
+            // Set the view
+            viewer.scene.camera.setView(homeCameraView);
         }
 
     </script>
