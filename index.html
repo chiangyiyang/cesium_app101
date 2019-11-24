@@ -7,6 +7,7 @@
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Widgets/widgets.css"
         rel="stylesheet">
     <script src="./settings.js"></script>
+    <script src="./data.js"></script>
     <script>
         function addLabel(text, lng, lat) {
             let label = viewer.entities.add({
@@ -34,12 +35,17 @@
             viewer.scene.camera.flyTo(homeCameraView);
         }
 
+        function loadData() {
+            console.log(mydata);
+        }
+
     </script>
 </head>
 
 <body>
     <div>
         <button onclick="addLabel('Taiwan', 121.5, 24.5)">Add a lable</button>
+        <button onclick="loadData()">Load data</button>
     </div>
     <div id="cesiumContainer" style="width: 100%; height:100%"></div>
     <script>
