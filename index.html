@@ -7,20 +7,24 @@
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Widgets/widgets.css"
         rel="stylesheet">
     <script src="./settings.js"></script>
+    <script>
+        function addLabel(text, lng, lat) {
+            viewer.entities.add({
+                position: Cesium.Cartesian3.fromDegrees(lng, lat),
+                label: {
+                    text: text
+                }
+            });
+        }
+    </script>
 </head>
 
 <body>
-
     <div id="cesiumContainer" style="width: 100%; height:100%"></div>
     <script>
         Cesium.Ion.defaultAccessToken = token;
         var viewer = new Cesium.Viewer('cesiumContainer');
-        viewer.entities.add({
-            position: Cesium.Cartesian3.fromDegrees(121.5, 23.5),
-            label: {
-                text: 'A label!'
-            }
-        });
+        addLabel('A label', 121.5, 23.5);
     </script>
 </body>
 
