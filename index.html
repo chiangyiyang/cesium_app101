@@ -36,10 +36,14 @@
         }
 
         function loadData() {
-            mydata.forEach(element => {
-                // console.log(element);
-                addLabel(element.name, element.lng, element.lat);
-            });
+            fetch('http://127.0.0.1:5500/epa_sample10.json')
+                .then(response => response.json())
+                .then(json => console.log(json))
+
+            // mydata.forEach(element => {
+            //     // console.log(element);
+            //     addLabel(element.name, element.lng, element.lat);
+            // });
         }
 
     </script>
